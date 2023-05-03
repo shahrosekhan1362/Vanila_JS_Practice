@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <style>
+      span {
+        background-color: orange !important;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function highlight(strings, ...values) {
+        let str = "";
+        strings.forEach((stirng, i) => {
+          str += `${stirng} <span>${values[i] || ""}</span>`;
+        });
+        return str;
+      }
+      const firstName = "shahrose";
+      const lastName = "Khan";
+      const mobile = "0300 1343433";
+      const email = "shahrose@gmail.com";
+      const message = highlight`Welcome to our website ${firstName} ${lastName}, contact number: ${mobile}. You will receive email on ${email}`;
+      document.body.innerHTML = message;
+    </script>
+  </body>
+</html>
